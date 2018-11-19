@@ -13,7 +13,6 @@ Used docker images
 - custom php ( based on php:7.2.11-fpm ) (cf /docker/php/Dockerfile)
 - mysql:5.7
 
----
 
 Install
 ------------
@@ -29,6 +28,7 @@ Start
 ```
 $  make start
 ```
+and browse http://localhost:8081/
 
 Stop
 ------------
@@ -36,4 +36,4 @@ Stop
 $  make stop
 ```
 
----
+
