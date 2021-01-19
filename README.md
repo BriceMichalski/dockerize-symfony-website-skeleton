@@ -36,3 +36,9 @@ and browse http://localhost:8081/
 ```
 $  make stop
 ```
+
+## Open term in php container
+
+```
+$  make php
+```
