@@ -2,6 +2,8 @@
 # Used to copy composer bin
 FROM composer:1.7.2 as composer
 
+RUN composer self-update
+
 #############################
 
 FROM php:7.4.14-fpm as php
