@@ -4,8 +4,9 @@ FROM composer:1.7.2 as composer
 
 #############################
 
-FROM php:7.2.11-fpm as php
+FROM php:7.4.14-fpm as php
 
+ENV TERM=xterm-256color
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 RUN apt-get update \
@@ -17,7 +18,10 @@ RUN apt-get update \
         openssl \
         wget \
         zlib1g-dev \
-    && rm -rf /var/lib/apt/lists/*
+        libzip-dev \
+    && rm -rf /var/lib/apt/lists/* \
+    && pecl install xdebug \
+    && docker-php-ext-enable xdebug
 
 RUN docker-php-ext-install -j"$(nproc)" intl pdo_mysql zip
 

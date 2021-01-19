@@ -10,5 +10,9 @@ start:
 		docker-compose up -d
 
 .PHONY:
+php:
+		docker-compose exec php /bin/bash
+
+.PHONY:
 stop:
 		docker-compose stop
